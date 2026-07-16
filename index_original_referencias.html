@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080706" />
+  <meta name="description" content="Atlas do Impossível — o almanaque da Fantásticos para autores de fantasia, ficção científica, horror e narrativas híbridas." />
+  <title>Atlas do Impossível | Fantásticos</title>
+  <style>
+    :root{
+      --bg:#080706;
+      --bg-soft:#100e0b;
+      --panel:#15120e;
+      --panel-2:#1b1711;
+      --gold:#d8a84b;
+      --gold-light:#f5d889;
+      --gold-deep:#8f6424;
+      --ink:#fff8e7;
+      --muted:#c8bea9;
+      --line:rgba(216,168,75,.30);
+      --shadow:0 28px 80px rgba(0,0,0,.52);
+      --radius:24px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 15% 12%, rgba(216,168,75,.10), transparent 28rem),
+        radial-gradient(circle at 88% 36%, rgba(47,100,143,.12), transparent 34rem),
+        linear-gradient(180deg,#050504 0%,#0b0907 52%,#070605 100%);
+      font-family:var(--sans);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed; inset:0; pointer-events:none; z-index:-1;
+      opacity:.22;
+      background-image:
+        radial-gradient(circle at 20% 30%, #fff 0 1px, transparent 1.3px),
+        radial-gradient(circle at 75% 15%, #e9c674 0 1px, transparent 1.3px),
+        radial-gradient(circle at 55% 78%, #fff 0 1px, transparent 1.3px);
+      background-size:170px 170px, 240px 240px, 310px 310px;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit}
+    .container{width:min(1160px,calc(100% - 36px));margin-inline:auto}
+    .eyebrow{
+      margin:0 0 12px;
+      color:var(--gold-light);
+      font-size:.78rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    h1,h2,h3{font-family:var(--serif);line-height:1.08;margin:0}
+    h2{font-size:clamp(2.1rem,5vw,4.3rem);font-weight:500;letter-spacing:-.025em}
+    .lead{font-size:clamp(1rem,2vw,1.22rem);color:var(--muted);max-width:720px}
+    .gold{color:var(--gold-light)}
+
+    .nav{
+      position:fixed; inset:0 0 auto; z-index:20;
+      background:linear-gradient(180deg,rgba(5,5,4,.94),rgba(5,5,4,.68),transparent);
+      backdrop-filter:blur(10px);
+    }
+    .nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--serif);letter-spacing:.06em}
+    .brand-mark{width:42px;height:42px;object-fit:cover;border-radius:50%;border:1px solid var(--line)}
+    .brand span{font-size:1.02rem}
+    .nav-links{display:flex;align-items:center;gap:24px;font-size:.92rem;color:#e6ddca}
+    .nav-links a{text-decoration:none;transition:.2s}
+    .nav-links a:hover{color:var(--gold-light)}
+    .nav-cta,.btn{
+      border:1px solid rgba(244,208,128,.54);
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      letter-spacing:.02em;
+      transition:transform .2s,box-shadow .2s,background .2s;
+    }
+    .nav-cta{padding:10px 16px;background:rgba(216,168,75,.11)}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(216,168,75,.18)}
+    .menu-btn{display:none;border:1px solid var(--line);background:#111;color:#fff;border-radius:12px;padding:8px 11px;font-size:1.2rem}
+
+    .hero{min-height:100svh;display:grid;align-items:center;padding:112px 0 70px;position:relative}
+    .hero::after{
+      content:"";position:absolute;left:0;right:0;bottom:0;height:140px;
+      background:linear-gradient(transparent,var(--bg));pointer-events:none;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:56px}
+    .hero-copy{position:relative;z-index:2}
+    .hero-logo{width:min(460px,88%);margin:0 0 10px;filter:drop-shadow(0 20px 42px rgba(0,0,0,.7))}
+    .hero h1{font-size:clamp(2.7rem,6vw,5.7rem);font-weight:500;letter-spacing:-.035em;max-width:820px}
+    .hero .lead{margin:24px 0 30px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;min-height:52px}
+    .btn-primary{background:linear-gradient(135deg,#f3d27d,#a87526);color:#171006;border-color:#f6df9d}
+    .btn-secondary{background:rgba(255,255,255,.035);color:#fff}
+    .hero-points{display:flex;gap:24px;flex-wrap:wrap;margin-top:34px;color:#d7cebc;font-size:.91rem}
+    .hero-points span::before{content:"✦";color:var(--gold);margin-right:8px}
+    .hero-visual{position:relative;min-height:690px}
+    .poster{
+      width:min(430px,100%);margin-inline:auto;border-radius:28px;overflow:hidden;
+      border:1px solid rgba(244,208,128,.35);box-shadow:var(--shadow);transform:rotate(1.2deg);
+    }
+    .poster::before{content:"";position:absolute;inset:-30px;border:1px solid rgba(216,168,75,.16);border-radius:34px;z-index:-1}
+    .poster img{aspect-ratio:9/16;object-fit:cover}
+    .float-badge{
+      position:absolute;right:1%;bottom:10%;padding:14px 18px;border-radius:16px;
+      background:rgba(12,10,8,.86);border:1px solid var(--line);backdrop-filter:blur(10px);
+      box-shadow:0 18px 50px rgba(0,0,0,.45)
+    }
+    .float-badge strong{display:block;color:var(--gold-light);font-family:var(--serif);font-size:1.3rem}
+    .float-badge span{font-size:.85rem;color:var(--muted)}
+
+    section{padding:100px 0}
+    .section-head{display:flex;justify-content:space-between;gap:42px;align-items:end;margin-bottom:44px}
+    .section-head .lead{margin:0}
+    .portal-band{
+      padding:36px;border:1px solid var(--line);border-radius:var(--radius);
+      background:linear-gradient(135deg,rgba(216,168,75,.09),rgba(255,255,255,.02));
+      display:grid;grid-template-columns:1.35fr .65fr;gap:34px;align-items:center;box-shadow:var(--shadow)
+    }
+    .portal-band h3{font-size:clamp(1.8rem,4vw,3.2rem);font-weight:500}
+    .portal-band p{color:var(--muted);margin:16px 0 0}
+    .portal-symbol{width:220px;margin:auto;mix-blend-mode:screen;filter:drop-shadow(0 15px 35px rgba(216,168,75,.18))}
+
+    .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:42px}
+    .benefit{padding:26px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015))}
+    .benefit .icon{font-size:1.45rem;color:var(--gold-light);margin-bottom:18px}
+    .benefit h3{font-size:1.35rem}
+    .benefit p{font-size:.94rem;color:var(--muted);margin:10px 0 0}
+
+    .genres{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .genre{position:relative;min-height:400px;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.32)}
+    .genre img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.05)}
+    .genre::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.88) 78%)}
+    .genre-copy{position:absolute;z-index:2;inset:auto 22px 22px}
+    .genre h3{font-size:1.65rem}
+    .genre p{margin:8px 0 0;color:#ddd2bf;font-size:.91rem}
+
+    .gallery{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .shot{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#0d0b09;box-shadow:var(--shadow)}
+    .shot.large{grid-column:1/-1}
+    .shot img{width:100%;height:100%;object-fit:cover}
+    .shot figcaption{padding:14px 18px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+    .step{counter-increment:step;padding:28px;border-top:1px solid var(--line)}
+    .step::before{content:"0" counter(step);display:block;font-family:var(--serif);font-size:2.6rem;color:var(--gold-deep);margin-bottom:14px}
+    .step h3{font-size:1.45rem}
+    .step p{color:var(--muted);font-size:.94rem}
+
+    .plans-wrap{position:relative}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+    .plan{position:relative;padding:30px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.018));display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.32)}
+    .plan::before{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;background:linear-gradient(135deg,rgba(255,255,255,.18),transparent 40%,rgba(216,168,75,.2));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+    .plan-tier{font-weight:900;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--gold-light)}
+    .price{font-family:var(--serif);font-size:3.15rem;line-height:1;margin:18px 0 5px}
+    .price small{font-family:var(--sans);font-size:.86rem;color:var(--muted)}
+    .plan-sub{color:var(--muted);font-size:.9rem;margin-bottom:22px}
+    .plan ul{padding:0;margin:0 0 28px;list-style:none;display:grid;gap:12px;color:#eee5d6;font-size:.95rem}
+    .plan li{display:flex;gap:10px}
+    .plan li::before{content:"✦";color:var(--gold)}
+    .plan .btn{margin-top:auto;width:100%}
+    .plan.ouro{transform:translateY(-10px);border-color:rgba(245,216,137,.6);background:linear-gradient(180deg,rgba(216,168,75,.12),rgba(255,255,255,.025))}
+    .plan-note{margin-top:24px;padding:20px 24px;border-radius:18px;border:1px dashed var(--line);color:var(--muted);display:flex;gap:18px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+
+    .faq{display:grid;grid-template-columns:.72fr 1.28fr;gap:64px;align-items:start}
+    details{border-bottom:1px solid var(--line);padding:20px 0}
+    summary{cursor:pointer;list-style:none;font-weight:800;font-size:1.02rem;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:1.4rem;color:var(--gold)}
+    details[open] summary::after{content:"−"}
+    details p{color:var(--muted);margin:13px 0 2px}
+
+    .final-cta{
+      padding:54px;border-radius:28px;border:1px solid rgba(245,216,137,.38);
+      background:
+        linear-gradient(90deg,rgba(0,0,0,.87),rgba(0,0,0,.42)),
+        url('assets/genre_hybrid.webp') center/cover;
+      box-shadow:var(--shadow)
+    }
+    .final-cta h2{max-width:800px}
+    .final-cta p{max-width:680px;color:#e7dece}
+
+    footer{padding:54px 0 28px;border-top:1px solid var(--line);margin-top:80px}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}
+    .footer-brand{display:flex;align-items:center;gap:18px}
+    .footer-brand img{width:92px;height:92px;object-fit:cover;border-radius:18px}
+    .footer-brand strong{display:block;font-family:var(--serif);font-size:1.35rem}
+    .footer-brand span{color:var(--muted);font-size:.9rem}
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+    .footer-links a{text-decoration:none}
+    .legal{margin-top:30px;padding-top:18px;border-top:1px solid rgba(216,168,75,.14);color:#978e7d;font-size:.8rem}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:960px){
+      .nav-links{display:none;position:absolute;top:72px;left:18px;right:18px;padding:18px;border:1px solid var(--line);background:rgba(9,8,7,.98);border-radius:18px;flex-direction:column;align-items:flex-start}
+      .nav-links.open{display:flex}.menu-btn{display:block}.nav-cta{display:none}
+      .hero-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-logo{margin-inline:auto}.hero .lead{margin-inline:auto}.hero-actions,.hero-points{justify-content:center}.hero-visual{min-height:590px}
+      .float-badge{right:8%}
+      .benefits,.genres,.steps{grid-template-columns:repeat(2,1fr)}
+      .plans{grid-template-columns:1fr}.plan.ouro{transform:none}.faq{grid-template-columns:1fr;gap:24px}.portal-band{grid-template-columns:1fr;text-align:center}
+    }
+    @media (max-width:640px){
+      .container{width:min(100% - 24px,1160px)}
+      .nav-inner{height:68px}.brand span{display:none}
+      .hero{padding-top:92px}.hero h1{font-size:clamp(2.55rem,14vw,4.4rem)}.hero-logo{width:88%}.hero-visual{min-height:480px}.poster{width:78%}.float-badge{right:0;bottom:4%;padding:11px 14px}
+      section{padding:72px 0}.section-head{display:block}.section-head .lead{margin-top:16px}
+      .benefits,.genres,.steps,.gallery{grid-template-columns:1fr}.shot.large{grid-column:auto}
+      .genre{min-height:340px}.portal-band{padding:26px 20px}.plan{padding:26px 22px}.price{font-size:2.8rem}
+      .final-cta{padding:36px 24px}.footer-grid{grid-template-columns:1fr}.footer-links{justify-content:flex-start}
+    }
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a class="brand" href="#inicio"><img class="brand-mark" src="assets/atlas_logo.webp" alt="Símbolo do Atlas do Impossível"><span>Atlas do Impossível</span></a>
+      <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#projeto">O projeto</a><a href="#generos">Gêneros</a><a href="#visual">Projeto gráfico</a><a href="#planos">Planos</a><a href="#duvidas">Dúvidas</a>
+      </div>
+      <a class="nav-cta" href="#planos">Escolher plano</a>
+    </div>
+  </nav>
+
+  <main>
+    <header id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Primeira edição • lançamento em agosto</p>
+          <img class="hero-logo" src="assets/atlas_logo.webp" alt="Atlas do Impossível">
+          <h1>Seu universo não nasceu para permanecer <span class="gold">escondido.</span></h1>
+          <p class="lead">Publique contos ou capítulos no almanaque da Fantásticos dedicado à fantasia, ficção científica, horror e narrativas híbridas — com recorrência, acompanhamento e um projeto gráfico pensado para abrir portais.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#planos">Quero participar <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#visual">Ver como ficará</a>
+          </div>
+          <div class="hero-points"><span>12 mooks</span><span>Mentorias periódicas</span><span>Visibilidade editorial</span></div>
+        </div>
+        <div class="hero-visual reveal">
+          <figure class="poster"><img src="assets/hero_poster.webp" alt="Fantasia, ficção científica e horror reunidos no Atlas do Impossível"></figure>
+          <div class="float-badge"><strong>Portais abertos</strong><span>Vagas para autores</span></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="projeto">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">O que é o Atlas</p><h2>Não é só uma coletânea.<br><span class="gold">É um mapa de mundos em expansão.</span></h2></div>
+          <p class="lead">O Atlas do Impossível assume o formato de almanaque para reunir diferentes vertentes da literatura fantástica sem prender cada história a uma única gaveta.</p>
+        </div>
+        <div class="portal-band reveal">
+          <div><h3>Cada texto se transforma em uma <span class="gold">entrada de mundo.</span></h3><p>Organização por gênero, abertura visual, símbolo da narrativa, apresentação do autor e páginas concebidas para que o leitor não encontre apenas palavras: encontre um universo.</p></div>
+          <img class="portal-symbol" src="assets/atlas_logo.webp" alt="Portal do Atlas do Impossível">
+        </div>
+        <div class="benefits">
+          <article class="benefit reveal"><div class="icon">◈</div><h3>Publicação recorrente</h3><p>Construa presença ao longo de 12 mooks, em vez de aparecer apenas no lançamento de um livro.</p></article>
+          <article class="benefit reveal"><div class="icon">✦</div><h3>Nome em circulação</h3><p>Ocupe um espaço editorial e faça leitores, autores e parceiros conhecerem o seu trabalho.</p></article>
+          <article class="benefit reveal"><div class="icon">⌁</div><h3>Acompanhamento</h3><p>Conte com mentorias na periodicidade do plano escolhido para evoluir com direção.</p></article>
+          <article class="benefit reveal"><div class="icon">⟡</div><h3>Impacto visual</h3><p>Seu texto entra em uma publicação que trata cada obra como um portal com identidade própria.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="generos">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">Portais por gênero</p><h2>Três grandes territórios.<br><span class="gold">Infinitas possibilidades.</span></h2></div><p class="lead">Os subgêneros orientam a curadoria interna; o almanaque permite que diferentes atmosferas convivam na mesma edição.</p></div>
+        <div class="genres">
+          <article class="genre reveal"><img src="assets/genre_fantasy.webp" alt="Universo de fantasia"><div class="genre-copy"><h3>Fantasia</h3><p>Alta fantasia, dark fantasy, fantasia heroica, romantasy, mitológica, folclórica e outras vertentes.</p></div></article>
+          <article class="genre reveal"><img src="assets/genre_scifi.webp" alt="Universo de ficção científica"><div class="genre-copy"><h3>Ficção científica</h3><p>Science fantasy, steampunk, viagens no tempo, multiversos, inteligência artificial e futuros possíveis.</p></div></article>
+          <article class="genre reveal"><img src="assets/genre_horror.webp" alt="Universo de horror"><div class="genre-copy"><h3>Horror</h3><p>Sobrenatural, cósmico, psicológico, demoníaco, folk horror, monstros e territórios inquietantes.</p></div></article>
+          <article class="genre reveal"><img src="assets/genre_hybrid.webp" alt="Narrativas híbridas"><div class="genre-copy"><h3>Híbridos</h3><p>Weird fiction, suspense sobrenatural, horror sci-fi, fantasia urbana e encontros que desafiam rótulos.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visual">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">Projeto gráfico</p><h2>Não colocamos histórias em páginas.<br><span class="gold">Abrimos portais.</span></h2></div><p class="lead">As imagens abaixo simulam a linguagem editorial do almanaque: índice por universos, aberturas temáticas e páginas internas em versões colorida e preto e branco.</p></div>
+        <div class="gallery">
+          <figure class="shot large reveal"><img src="assets/spread_index.webp" alt="Simulação do índice dos portais do Atlas do Impossível"><figcaption>Índice dos Portais — organização dos universos por gênero.</figcaption></figure>
+          <figure class="shot reveal"><img src="assets/spread_color.webp" alt="Simulação colorida das páginas internas"><figcaption>Simulação de edição especial ou e-book.</figcaption></figure>
+          <figure class="shot reveal"><img src="assets/spread_bw.webp" alt="Simulação em preto e branco das páginas internas"><figcaption>Simulação de edição impressa em preto e branco.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-head reveal"><div><p class="eyebrow">Como funciona</p><h2>Do manuscrito ao <span class="gold">portal.</span></h2></div></div>
+        <div class="steps">
+          <article class="step reveal"><h3>Escolha seu plano</h3><p>Defina o espaço de publicação e a periodicidade de mentoria que combinam com o seu momento.</p></article>
+          <article class="step reveal"><h3>Envie seu material</h3><p>Você pode participar com conto ou capítulos de um livro publicado ou ainda em processo de escrita.</p></article>
+          <article class="step reveal"><h3>Passe pela curadoria</h3><p>A equipe inicia a organização e as revisões do conteúdo que seguirá para a edição.</p></article>
+          <article class="step reveal"><h3>Entre no Atlas</h3><p>Seu texto ganha contexto editorial, identificação de gênero e uma apresentação visual integrada ao almanaque.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="planos">
+      <div class="container plans-wrap">
+        <div class="section-head reveal"><div><p class="eyebrow">Planos do Clube dos Escritores Fantásticos</p><h2>Escolha o tamanho do seu <span class="gold">portal.</span></h2></div><p class="lead">Todos os planos foram pensados para publicação contínua no mook. A diferença está no espaço editorial e na frequência do acompanhamento.</p></div>
+        <div class="plans">
+          <article class="plan bronze reveal">
+            <div class="plan-tier">Plano Bronze</div><div class="price">R$ 210 <small>/mês</small></div><div class="plan-sub">Entrada essencial para construir recorrência.</div>
+            <ul><li>Até 1.875 palavras</li><li>Participação em 12 mooks</li><li>1 mentoria mensal</li><li>Integração ao projeto editorial do Atlas</li></ul>
+            <a class="btn btn-secondary plan-link" data-plan="bronze" href="#">Contratar Bronze</a>
+          </article>
+          <article class="plan prata reveal">
+            <div class="plan-tier">Plano Prata</div><div class="price">R$ 280 <small>/mês</small></div><div class="plan-sub">Mais espaço para desenvolver sua presença.</div>
+            <ul><li>Até 3.750 palavras</li><li>Participação em 12 mooks</li><li>1 mentoria quinzenal</li><li>Integração ao projeto editorial do Atlas</li></ul>
+            <a class="btn btn-secondary plan-link" data-plan="prata" href="#">Contratar Prata</a>
+          </article>
+          <article class="plan ouro reveal">
+            <div class="plan-tier">Plano Ouro</div><div class="price">R$ 350 <small>/mês</small></div><div class="plan-sub">Maior espaço editorial e acompanhamento frequente.</div>
+            <ul><li>Até 7.500 palavras</li><li>Participação em 12 mooks</li><li>1 mentoria semanal</li><li>Integração ao projeto editorial do Atlas</li></ul>
+            <a class="btn btn-primary plan-link" data-plan="ouro" href="#">Contratar Ouro</a>
+          </article>
+        </div>
+        <div class="plan-note reveal"><span><strong class="gold">Prefere uma participação única?</strong> Existe modalidade avulsa com valor correspondente ao plano escolhido. As condições são confirmadas diretamente com a editora.</span><a class="btn btn-secondary plan-link" data-plan="avulsa" href="#">Consultar inscrição única</a></div>
+      </div>
+    </section>
+
+    <section id="duvidas">
+      <div class="container faq">
+        <div class="reveal"><p class="eyebrow">Dúvidas frequentes</p><h2>Antes de atravessar o <span class="gold">portal.</span></h2><p class="lead">As informações essenciais para escolher sua participação.</p></div>
+        <div class="reveal">
+          <details><summary>Posso publicar um conto ou capítulos?</summary><p>Sim. O Atlas recebe contos e também capítulos de livros já publicados ou ainda em processo de escrita.</p></details>
+          <details><summary>Preciso ter um livro publicado?</summary><p>Não. O projeto também contempla autores que estão desenvolvendo uma obra e desejam começar a construir presença antes do lançamento.</p></details>
+          <details><summary>O que significa “mook”?</summary><p>É uma publicação híbrida entre revista e livro: periódica como uma revista, mas com tratamento editorial, permanência e valor de coleção próximos aos de um livro.</p></details>
+          <details><summary>Qual é o limite de palavras?</summary><p>O limite depende do plano: até 1.875 palavras no Bronze, 3.750 no Prata e 7.500 no Ouro.</p></details>
+          <details><summary>Quando sai a primeira edição?</summary><p>O lançamento da primeira edição está previsto para agosto. O período de organização e revisão dos conteúdos já começou.</p></details>
+          <details><summary>Como confirmo a contratação?</summary><p>Escolha um plano nesta página. O botão abre uma mensagem pronta para a Fantásticos, com o plano identificado, para que a contratação seja finalizada.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="final-cta reveal"><p class="eyebrow">O próximo portal pode ser o seu</p><h2>Escrever é o começo.<br><span class="gold">Ser descoberto exige presença.</span></h2><p>Entre no Atlas do Impossível e transforme sua história em parte de uma publicação recorrente, visualmente marcante e conectada ao ecossistema da Fantásticos.</p><a class="btn btn-primary" href="#planos">Escolher meu plano</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><img src="assets/fantasticos_logo.webp" alt="Fantásticos"><div><strong>Editora Fantásticos</strong><span>Histórias que podem ser lidas, jogadas e vividas.</span></div></div>
+        <div class="footer-links"><a href="mailto:fantasticoseditora@gmail.com">fantasticoseditora@gmail.com</a><a href="#inicio">Voltar ao topo ↑</a></div>
+      </div>
+      <div class="legal">Valores e condições apresentados conforme os planos informados pela Fantásticos. A contratação e a confirmação de disponibilidade são concluídas diretamente com a editora.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* Cole links de checkout abaixo quando estiverem disponíveis.
+       Enquanto estiverem vazios, os botões abrem um e-mail pronto para a Fantásticos. */
+    const CHECKOUT_URLS = { ouro:"", prata:"", bronze:"", avulsa:"" };
+    const PLANOS = {
+      ouro:{nome:"Plano Ouro",valor:"R$ 350 mensais"},
+      prata:{nome:"Plano Prata",valor:"R$ 280 mensais"},
+      bronze:{nome:"Plano Bronze",valor:"R$ 210 mensais"},
+      avulsa:{nome:"Inscrição única",valor:"valor correspondente ao plano escolhido"}
+    };
+    document.querySelectorAll('.plan-link').forEach(link => {
+      const key = link.dataset.plan;
+      if (CHECKOUT_URLS[key]) { link.href = CHECKOUT_URLS[key]; link.target = '_blank'; link.rel = 'noopener'; }
+      else {
+        const p = PLANOS[key];
+        const subject = encodeURIComponent(`Quero contratar — ${p.nome} do Atlas do Impossível`);
+        const body = encodeURIComponent(`Saudações fantásticas!\n\nQuero contratar o ${p.nome} do Atlas do Impossível (${p.valor}).\n\nMeu nome é: \nMeu WhatsApp é: \nMinha obra é: \nGênero/subgênero: \n\nAguardo as orientações para concluir a contratação.`);
+        link.href = `mailto:fantasticoseditora@gmail.com?subject=${subject}&body=${body}`;
+      }
+    });
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open)});
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+    const io = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
