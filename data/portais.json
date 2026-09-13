@@ -1,0 +1,167 @@
+{
+  "edition": "01",
+  "season": "2026/2027",
+  "generated_at": "2026-09-13",
+  "portals": [
+    {
+      "portal": 1,
+      "slug": "sanguessugas",
+      "title": "Sanguessugas",
+      "author": "Rafael A. F. Silva",
+      "symbol": "Justiça",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Quando a justiça atravessa a noite, quem decide o preço do sangue?"
+    },
+    {
+      "portal": 2,
+      "slug": "rosa-fantasma",
+      "title": "As Aventuras da Rosa Fantasma",
+      "author": "Maiara Rockenbach Mertz",
+      "symbol": "Autômato",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Uma prisão, um pequeno autômato e um plano perigosamente entusiasmado."
+    },
+    {
+      "portal": 3,
+      "slug": "tamanho-da-ausencia",
+      "title": "O Tamanho da Ausência",
+      "author": "M. M. Oliver",
+      "symbol": "Ausência",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Há casas que guardam mais do que objetos — e silêncios que ainda respiram."
+    },
+    {
+      "portal": 4,
+      "slug": "aerium",
+      "title": "Aerium",
+      "author": "Lysandra Lima",
+      "symbol": "Liberdade",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Olhe para cima: há cidades que só existem para quem ousa cair do céu."
+    },
+    {
+      "portal": 5,
+      "slug": "escrito-em-pedra",
+      "title": "Escrito em Pedra",
+      "author": "Mary Leide de Melo Alves",
+      "symbol": "Pecado",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Algumas culpas não desaparecem; aprendem a seguir nossos passos."
+    },
+    {
+      "portal": 6,
+      "slug": "colisao-das-luas",
+      "title": "A Colisão das Luas",
+      "author": "Bianca Victoria Santin",
+      "symbol": "Autoaceitação",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Duas luas se aproximam — e uma identidade inteira começa a se partir."
+    },
+    {
+      "portal": 7,
+      "slug": "nucleo-de-krystallos",
+      "title": "O núcleo de krystallos",
+      "author": "Aline Loureiro",
+      "symbol": "Ciclo",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "No fundo da terra, um sonho encontra o relógio correndo contra ele."
+    },
+    {
+      "portal": 8,
+      "slug": "duas-rainhas",
+      "title": "As Duas Rainhas",
+      "author": "Katia Skyler",
+      "symbol": "Redenção",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Entre estrelas e tronos, memória e lealdade deixam de ser certezas."
+    },
+    {
+      "portal": 9,
+      "slug": "camara-gelo",
+      "title": "A Câmara que o Gelo Reconheceu",
+      "author": "Marcela Cristina",
+      "symbol": "Memória",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "O gelo guarda uma melodia que esperou séculos por quem pudesse ouvi-la."
+    },
+    {
+      "portal": 10,
+      "slug": "ceu-sem-estrelas",
+      "title": "Céu sem estrelas",
+      "author": "Raphaela Rissoli",
+      "symbol": "Inevitável",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Na escuridão absoluta, procurar um rosto conhecido pode ser o maior perigo."
+    },
+    {
+      "portal": 11,
+      "slug": "darkelium",
+      "title": "Darkelium",
+      "author": "Genivaldo F. Lopes",
+      "symbol": "Lótus",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Onde magia é condenada, uma única escolha pode incendiar dois mundos."
+    },
+    {
+      "portal": 12,
+      "slug": "levante-porquinhos",
+      "title": "O Levante dos Porquinhos",
+      "author": "Gabriel Santana",
+      "symbol": "Porcos",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "As máquinas não dormem — mas os trabalhadores decidiram parar de fugir."
+    },
+    {
+      "portal": 13,
+      "slug": "o-setimo",
+      "title": "O Sétimo",
+      "author": "Átila da Silva",
+      "symbol": "Vingança",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "No Rio onde o fantástico é real, toda assombração cobra o que lhe devem."
+    },
+    {
+      "portal": 14,
+      "slug": "principe-de-marmore",
+      "title": "Príncipe de Mármore",
+      "author": "M. J. Brode",
+      "symbol": "Esperança",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Quando até o nome é retirado, lembrar quem se é torna-se uma revolução."
+    },
+    {
+      "portal": 15,
+      "slug": "duas-gatas-de-rua",
+      "title": "Duas gatas de rua",
+      "author": "Thalles Gomes Waichert",
+      "symbol": "Natureza",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Duas vidas pequenas cruzam uma cidade grande demais para ignorá-las."
+    },
+    {
+      "portal": 16,
+      "slug": "lugar-longe-sol",
+      "title": "Um Lugar Longe do Sol",
+      "author": "Pedro Furchi Neves",
+      "symbol": "Guerra",
+      "edition": "Edição 01",
+      "status": "em_producao",
+      "invitation": "Longe da luz, sobreviver é aprender a cartografia da própria guerra."
+    }
+  ]
+}
